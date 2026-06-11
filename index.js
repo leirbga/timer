@@ -6,8 +6,6 @@ const cajaVisible = document.querySelector('.cajaVisible');
 const btnAceptar = document.querySelectorAll('.aceptar');
 const cajaSobreTiempo = document.querySelector('#cajaSobreTiempo');
 const cajaPrincipal = document.querySelector('#tiempo');
-// const videoCochete = document.querySelector('.video');
-// videoCochete.classList.add('cajaOculta');
 
 botonEnviar.addEventListener('click', (evento) => {
     evento.preventDefault();
@@ -56,8 +54,3 @@ btnAceptar.forEach((boton) => {
         cajaSobreTiempo.classList.add('cajaOculta');
     })
 });
-
-
-//   <div class="video">
-//             <iframe width="560" height="315" src="https://www.youtube.com/embed/qg9escpGDIU?si=zBnVAVrvmO6Ey1jU&amp;controls=0&amp;start=7&autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay *; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="border: none;"></iframe>
-//             </div>
