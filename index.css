@@ -1,0 +1,183 @@
+body {
+    background: linear-gradient(#200acb, #ad0ad6);
+    min-height: 100vh;
+    color: #ffffff;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+
+#tiempo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#tiempo h1 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+}
+
+#input-numeros {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: #ffffff;
+    padding: 12px 20px;
+    font-size: 18px;
+    text-align: center;
+    outline: none;
+    width: 100%;
+    max-width: 260px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+#input-numeros:focus {
+    border-color: var(--neon-azul, #00f3ff);
+    box-shadow: 0 0 15px var(--neon-azul, #00f3ff), inset 0 0 5px var(--neon-azul, #00f3ff);
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=number] {
+    --moz-appearance: textfield;
+}
+
+
+#btn-enviar, .aceptar {
+    background: linear-gradient(90deg, var(--neon-azul, #00f3ff), #0070f3);
+    color: #ffffff;
+    border: none;
+    padding: 12px 35px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin-top: 20px;
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    width: auto;
+}
+
+#btn-enviar:hover, .aceptar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--neon-azul, #00f3ff), 0 0 40px #0070f3;
+}
+
+.cajaVisible {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 9999;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.cajaOculta {
+    display: none !important;
+}
+
+.cajaEncima {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 360px;
+    background: linear-gradient(135deg, #ff007f, #7928ca); 
+    padding: 30px;
+    border-radius: 15px;
+    box-sizing: border-box;
+    box-shadow: 
+        0 0 20px rgba(255, 0, 127, 0.6),
+        0 0 40px rgba(121, 40, 202, 0.4);
+}
+
+#tiempoVacio, #tiempoMayor {
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    margin: 0;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+
+.cuentaRegresiva {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 500;
+    box-sizing: border-box;
+}
+
+.cuentaRegresiva p {
+    font-size: 25vw; 
+    -max-font-size: 180px; 
+    font-weight: 900;
+    margin: 0;
+    background: linear-gradient(180deg, #39ff14, #fffb00);
+    --webkit-background-clip: text; 
+    --webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 25px rgba(57, 255, 20, 0.6));
+}
+
+.video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    z-index: 10000;
+}
+
+.video iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+@media (max-width: 480px) {
+    #tiempo h1 {
+        font-size: 1.5rem;
+    }
+    .cajaEncima {
+        padding: 20px;
+    }
+    .cuentaRegresiva p {
+        font-size: 35vw;
+    }
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Timer</title>
+</head>
+<body>
+
+    <div id="contador" class="cuentaRegresiva cajaOculta">
+        
+    </div>
+    <div id="tiempo">
+    <h1>Bienvenido, Introduce un número para iniciar el conteo regresivo!</h1>
+    <div id="input-tiempo">
+    <input type="number" id="input-numeros" placeholder="intruduce un numero">
+    </div>
+    <button id="btn-enviar" type="submit">Enviar</button>
+    </div>
+    
+    <div id="cajaTiempoVacio" class="cajaOculta">
+        <div class="cajaEncima">
+        <p id="tiempoVacio">Tienes que Introducir un numero!</p>
+        <button class="aceptar">Aceptar</button>
+        </div>
+    </div>
+
+    <div id="cajaSobreTiempo" class="cajaOculta">
+        <div class="cajaEncima">
+            <p id="tiempoMayor">Maximo 60 segundos!</p>
+            <button class="aceptar">Aceptar</button>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
