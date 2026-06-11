@@ -1,3 +1,4 @@
+/* 1. CONFIGURACIÓN GLOBAL Y CUERPO */
 body {
     background: linear-gradient(#200acb, #ad0ad6);
     min-height: 100vh;
@@ -5,13 +6,13 @@ body {
     font-family: 'Segoe UI', sans-serif;
     margin: 0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
     padding: 20px;
     overflow-x: hidden;
 }
-
 
 #tiempo {
     display: flex;
@@ -34,7 +35,7 @@ body {
     background: rgba(255, 255, 255, 0.05);
     border: 2px solid rgba(255, 255, 255, 0.2);
     border-radius: 8px;
-    color: #ffffff;
+    color: #000000;
     padding: 12px 20px;
     font-size: 18px;
     text-align: center;
@@ -59,7 +60,6 @@ input::-webkit-inner-spin-button {
 input[type=number] {
     --moz-appearance: textfield;
 }
-
 
 #btn-enviar, .aceptar {
     background: linear-gradient(90deg, var(--neon-azul, #00f3ff), #0070f3);
@@ -119,7 +119,7 @@ input[type=number] {
 }
 
 #tiempoVacio, #tiempoMayor {
-    color: #ffffff;
+    color: #000000;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -127,7 +127,6 @@ input[type=number] {
     margin: 0;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
-
 
 .cuentaRegresiva {
     display: flex;
@@ -141,18 +140,21 @@ input[type=number] {
     height: 100vh;
     z-index: 500;
     box-sizing: border-box;
+    pointer-events: none;
 }
 
 .cuentaRegresiva p {
     font-size: 25vw; 
-    -max-font-size: 180px; 
+    max-width: 100%;
     font-weight: 900;
+    border-radius: 20px;
     margin: 0;
     background: linear-gradient(180deg, #39ff14, #fffb00);
-    --webkit-background-clip: text; 
+    --webkit-background-clip: text;
     --webkit-text-fill-color: transparent;
     filter: drop-shadow(0 0 25px rgba(57, 255, 20, 0.6));
 }
+
 
 .video {
     position: fixed;
@@ -170,6 +172,66 @@ input[type=number] {
     border: none;
 }
 
+
+.cancha {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    height: 300px;
+    border-bottom: 3px solid rgba(255,255,255,0.4);
+    margin-top: 20px;
+}
+
+.arco {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    max-width: 250px;
+    height: 120px;
+    border: 4px solid #ffffff;
+    border-bottom: none;
+    background: radial-gradient(circle, transparent 20%, rgba(255,255,255,0.1) 21%) 0 0 / 10px 10px;
+    animation: redMover 3s infinite;
+}
+
+@keyframes redMover {
+    0%, 45% { transform: translateX(-50%) scaleY(1); }
+    50% { transform: translateX(-50%) scaleY(1.05) skewX(2deg); }
+    70% { transform: translateX(-50%) scaleY(1); }
+}
+
+.pelota {
+    font-size: 24px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: penalMontiel 3s infinite ease-in-out;
+}
+
+@keyframes penalMontiel {
+    0% { bottom: 10px; left: 50%; transform: translateX(-50%) scale(1.3); }
+    35% { bottom: 15px; left: 50%; transform: translateX(-50%) scale(1.3); }
+    48% { bottom: 190px; left: 72%; transform: translateX(-50%) scale(0.7) rotate(360deg); }
+    65%, 100% { bottom: 150px; left: 74%; transform: translateX(-50%) scale(0.65); }
+}
+
+.arquero {
+    font-size: 40px;
+    position: absolute;
+    top: 110px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: voladaLloris 3s infinite ease-out;
+}
+
+@keyframes voladaLloris {
+    0%, 35% { top: 110px; left: 50%; transform: translateX(-50%) rotate(0deg); }
+    48%, 100% { top: 130px; left: 30%; transform: translateX(-50%) rotate(-60deg); }
+}
+
 @media (max-width: 480px) {
     #tiempo h1 {
         font-size: 1.5rem;
@@ -179,5 +241,8 @@ input[type=number] {
     }
     .cuentaRegresiva p {
         font-size: 35vw;
+    }
+    .cancha {
+        transform: scale(0.85);
     }
 }

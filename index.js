@@ -34,12 +34,12 @@ botonEnviar.addEventListener('click', (evento) => {
             contador.classList.add('cajaOculta');
             temporizador.value = '';
             document.body.innerHTML = `
-            <div class="video">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/qg9escpGDIU?si=zBnVAVrvmO6Ey1jU&amp;controls=0&amp;start=7&autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay *; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="border: none;"></iframe>
-            </div>
+                    <div class="cancha">
+                    <div class="arco"></div>
+                    <div class="arquero">🧤</div>
+                    <div class="pelota">⚽</div>
+                    </div>
                 `;
-            // videoCochete.classList.remove('cajaOculta');
-            // videoCochete.classList.add('cajaVisible');
 
         }
     }, 1000);
@@ -56,3 +56,8 @@ btnAceptar.forEach((boton) => {
         cajaSobreTiempo.classList.add('cajaOculta');
     })
 });
+
+
+//   <div class="video">
+//             <iframe width="560" height="315" src="https://www.youtube.com/embed/qg9escpGDIU?si=zBnVAVrvmO6Ey1jU&amp;controls=0&amp;start=7&autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay *; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="border: none;"></iframe>
+//             </div>
